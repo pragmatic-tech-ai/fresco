@@ -19,9 +19,11 @@ test('graph-transforms is a transform-list; layout stages are strategy-slots', (
 test('every registry strategy (except internal stages) appears in the catalog', () => {
     const names = ListStrategyNames();
     const bySlot = new Map(GetPipelineCatalog().map((s) => [s.slotId, new Set(s.strategies.map((x) => x.className))]));
-    for (const [stage, classNames] of Object.entries(names)) {
+    for (const [stage, classNames] of Object.entries(names))
+    {
         if (NON_SLOT_STAGES.has(stage)) continue;
-        for (const cn of classNames) {
+        for (const cn of classNames)
+        {
             assert.ok(bySlot.get(stage)?.has(cn), `catalog missing ${stage}/${cn}`);
         }
     }
@@ -29,8 +31,10 @@ test('every registry strategy (except internal stages) appears in the catalog', 
 
 test('every catalog strategy exists in the registry', () => {
     const names = ListStrategyNames();
-    for (const slot of GetPipelineCatalog()) {
-        for (const s of slot.strategies) {
+    for (const slot of GetPipelineCatalog())
+    {
+        for (const s of slot.strategies)
+        {
             assert.ok(names[slot.slotId]?.includes(s.className), `extra catalog entry ${slot.slotId}/${s.className}`);
         }
     }

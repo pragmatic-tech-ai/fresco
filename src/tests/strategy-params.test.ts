@@ -6,7 +6,8 @@ import { BuildPipeline, LoadElementRepository, type PipelineConfiguration } from
 import { GetPipelineCatalog } from '../pipeline-catalog.js';
 
 test('every parameterized strategy builds with its default param values', () => {
-    for (const [className, def] of Object.entries(STRATEGY_PARAMS)) {
+    for (const [className, def] of Object.entries(STRATEGY_PARAMS))
+    {
         const values: Record<string, number | boolean> = {};
         for (const p of def.params) values[p.key] = p.default as number | boolean;
         const inst = def.build(values);

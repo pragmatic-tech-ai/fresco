@@ -83,7 +83,8 @@ const label = (text: string, x: number, y: number, size: number, color: Color): 
 
 // Container boxes — deeper boxes drawn with a lighter stroke.
 const boxColors = ['#1F4E79', '#2E75B6', '#5B9BD5'];
-for (const [id, r] of res.boxes!) {
+for (const [id, r] of res.boxes!)
+{
     const depth = id.split(':').length; // cheap; all top-ish here
     const color = Color.FromHex(boxColors[Math.min(depth, boxColors.length - 1)]!);
     rectOutline(r.position.X, r.position.Y, r.width, r.height, color, 2);
@@ -91,7 +92,8 @@ for (const [id, r] of res.boxes!) {
 }
 
 // Routed edges.
-for (const [, routing] of res.routes!) {
+for (const [, routing] of res.routes!)
+{
     if (routing.kind !== 'points') continue;
     const pts = routing.waypoints;
     let minX = Infinity, minY = Infinity;
@@ -103,7 +105,8 @@ for (const [, routing] of res.routes!) {
 }
 
 // Leaf nodes as rectangles of their real Size.
-for (const n of g.nodes) {
+for (const n of g.nodes)
+{
     const p = res.positions.get(n.Id);
     if (p === undefined || n.Size === undefined) continue;
     const w = n.Size.width, h = n.Size.height;

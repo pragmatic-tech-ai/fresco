@@ -4,7 +4,8 @@ import { Graph } from '../../graph.js';
 import { NestedCompoundLayout } from '../nested-compound-layout.js';
 import { BuildPipeline, LoadElementRepository, type PipelineConfiguration } from '../../configuration-loader.js';
 
-function engine() {
+function engine()
+{
     const config: PipelineConfiguration = {
         name: 't', transforms: [],
         layout: { edgeRouter: 'StraightLineEdgeRouter' },
@@ -24,7 +25,8 @@ test('a cross-boundary edge has a route with endpoints at the node positions', (
     const route = res.routes!.get(e);
     assert.ok(route, 'the crossing edge has a route');
     assert.equal(route!.kind, 'points');
-    if (route!.kind === 'points') {
+    if (route!.kind === 'points')
+    {
         const wp = route!.waypoints;
         assert.ok(wp.length >= 2, 'at least source and target');
         assert.deepEqual(wp[0], res.positions.get('a'), 'starts at source');

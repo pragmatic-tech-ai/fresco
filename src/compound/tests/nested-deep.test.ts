@@ -4,12 +4,14 @@ import { Graph } from '../../graph.js';
 import { NestedCompoundLayout } from '../nested-compound-layout.js';
 import { BuildPipeline, LoadElementRepository, type PipelineConfiguration } from '../../configuration-loader.js';
 
-function engine() {
+function engine()
+{
     const config: PipelineConfiguration = { name: 't', transforms: [], layout: {} };
     return BuildPipeline(config, LoadElementRepository()).layoutPipeline;
 }
 function contains(outer: { position: { X: number; Y: number }, width: number, height: number },
-                  inner: { position: { X: number; Y: number }, width: number, height: number }) {
+                  inner: { position: { X: number; Y: number }, width: number, height: number })
+                  {
     return inner.position.X >= outer.position.X - 0.001
         && inner.position.Y >= outer.position.Y - 0.001
         && inner.position.X + inner.width <= outer.position.X + outer.width + 0.001

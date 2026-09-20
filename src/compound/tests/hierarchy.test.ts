@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { Graph } from '../../graph.js';
 import { childrenOf, isContainer, ancestors, lca } from '../hierarchy.js';
 
-function nested(): Graph {
+function nested(): Graph
+{
     // root: box A (contains B and leaf p); B contains leaves q, r
     const g = new Graph();
     g.AddNode('A'); g.AddNode('B'); g.AddNode('p'); g.AddNode('q'); g.AddNode('r');

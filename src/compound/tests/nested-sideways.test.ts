@@ -4,14 +4,16 @@ import { Graph } from '../../graph.js';
 import { NestedCompoundLayout } from '../nested-compound-layout.js';
 import { BuildPipeline, LoadElementRepository, type PipelineConfiguration } from '../../configuration-loader.js';
 
-function engine() {
+function engine()
+{
     const config: PipelineConfiguration = { name: 't', transforms: [], layout: { edgeRouter: 'StraightLineEdgeRouter' } };
     return BuildPipeline(config, LoadElementRepository()).layoutPipeline;
 }
 
 test('two sibling containers whose members share a global rank still lay out without overlap and route', () => {
     const g = new Graph();
-    for (const box of ['A', 'B']) {
+    for (const box of ['A', 'B'])
+    {
         g.AddNode(box);
         g.AddNode(box + '1');
         const n = g.nodes.find(x => x.Id === box + '1')!; n.ParentId = box; n.Size = { width: 30, height: 20 };

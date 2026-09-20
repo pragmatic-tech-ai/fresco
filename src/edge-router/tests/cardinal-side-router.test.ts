@@ -7,7 +7,8 @@ import { Side } from '../edge-router.js';
 import { CardinalSideRouter, cardinalSides } from '../cardinal-side-router.js';
 
 // Run the router over a single edge u→v and return the one directive.
-function routeOne(u: Point, v: Point): { source: Side; target: Side } {
+function routeOne(u: Point, v: Point): { source: Side; target: Side }
+{
     const g = new Graph();
     g.AddNode('a');
     g.AddNode('b');

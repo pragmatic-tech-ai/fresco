@@ -4,7 +4,8 @@ import { Graph } from '../../graph.js';
 import { NestedCompoundLayout } from '../nested-compound-layout.js';
 import { BuildPipeline, LoadElementRepository, type PipelineConfiguration } from '../../configuration-loader.js';
 
-function engine() {
+function engine()
+{
     const config: PipelineConfiguration = { name: 't', transforms: [], layout: {} };
     return BuildPipeline(config, LoadElementRepository()).layoutPipeline;
 }

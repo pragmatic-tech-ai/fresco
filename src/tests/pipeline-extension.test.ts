@@ -8,7 +8,8 @@ import type { EdgeRouting, IEdgeRouter } from '../edge-router/index.js';
 
 // A consumer-supplied edge router, tagged so the test can read back which
 // instance BuildPipeline constructed and with what params.
-class TaggedRouter implements IEdgeRouter {
+class TaggedRouter implements IEdgeRouter
+{
     public readonly Name = 'Tagged';
     public readonly AlgorithmName = 'test';
     public readonly AcademicReferences = [];
