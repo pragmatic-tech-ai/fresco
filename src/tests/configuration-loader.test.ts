@@ -71,7 +71,7 @@ test('CardinalSideRouter is selectable as the edge-router stage', () => {
         name: 't', transforms: [], layout: { edgeRouter: 'CardinalSideRouter' },
     };
     const { layoutPipeline } = BuildPipeline(config, LoadElementRepository());
-    assert.equal(layoutPipeline.edgeRouter?.Name, 'Diagram (native)');
+    assert.equal(layoutPipeline.edgeRouter?.Name, 'Board (native)');
 });
 
 test('a disabled edge-router produces no routes in Apply', () => {

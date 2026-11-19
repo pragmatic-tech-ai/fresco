@@ -23,8 +23,8 @@ import { Side, type EdgeRouting, type IEdgeRouter } from './edge-router.js';
 // ignored (the host owns attachment points).
 export class CardinalSideRouter implements IEdgeRouter
 {
-    public readonly Name               = 'Diagram (native)';
-    public readonly AlgorithmName      = 'Dominant-axis cardinal sides for host-diagram routing';
+    public readonly Name               = 'Board (native)';
+    public readonly AlgorithmName      = 'Dominant-axis cardinal sides for host-board routing';
     public readonly AcademicReferences: readonly AcademicReference[] = [];
 
     public Route(
